@@ -17,18 +17,18 @@ public:
             return -1;
 
         if (root->val > minValue)
-           return root->val;
+            return root->val;
 
         long left = dfs(root->left, minValue);
         long right = dfs(root->right, minValue);
 
-        if(left==-1) return right;
-        if(right==-1) return left;
+        if (left == -1)
+            return right;
+        if (right == -1)
+            return left;
 
-        return min(left,right);
+        return min(left, right);
     }
 
-    int findSecondMinimumValue(TreeNode* root) {
-        return dfs(root,root->val);
-    }
+    int findSecondMinimumValue(TreeNode* root) { return dfs(root, root->val); }
 };
